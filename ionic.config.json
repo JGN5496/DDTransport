@@ -1,0 +1,7 @@
+{
+  "name": "DDtransport",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
