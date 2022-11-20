@@ -232,50 +232,50 @@ const Tab2: React.FC = () => {
                           {ar.lines.map((li, i) => {
                             return (
                               <IonItem key={i}>
-                                <IonRow>
-                                  <IonCol size="3">
+                                {/* <IonRow> */}
+                                  {/* <IonCol size="3"> */}
                                     <IonLabel className="color-dvb">
                                       {li}
                                     </IonLabel>
-                                  </IonCol>
-                                  <IonCol size="3">
+                                  {/* </IonCol> */}
+                                  {/* <IonCol size="3"> */}
                                     <IonLabel>
                                       Richtung: {ar.directions[i]}
                                     </IonLabel>
-                                  </IonCol>
-                                  <IonCol size="3">
+                                  {/* </IonCol> */}
+                                  {/* <IonCol size="3"> */}
                                     <IonLabel>
                                       Abfahrt: {ar.departureName[i]}
                                     </IonLabel>
-                                  </IonCol>
-                                  <IonCol size="3">
+                                  {/* </IonCol> */}
+                                  {/* <IonCol size="3"> */}
                                     <IonLabel>
                                       Steig: {ar.departurePlatform[i]}
                                     </IonLabel>
-                                  </IonCol>
-                                  </IonRow>
-                                  <IonRow>
-                                  <IonCol size="3">
+                                  {/* </IonCol> */}
+                                  {/* </IonRow> */}
+                                  {/* <IonRow> */}
+                                  {/* <IonCol size="3"> */}
                                     <IonLabel>
                                       Ab: {ar.departureStopTime[i]}
                                     </IonLabel>
-                                  </IonCol>
-                                  <IonCol size="3">
+                                  {/* </IonCol> */}
+                                  {/* <IonCol size="3"> */}
                                     <IonLabel>
                                       Ankunft: {ar.arrivalName[i]}
                                     </IonLabel>
-                                  </IonCol>
-                                  <IonCol size="3">
+                                  {/* </IonCol> */}
+                                  {/* <IonCol size="3"> */}
                                     <IonLabel>
                                       Steig: {ar.arrivalPlatform[i]}
                                     </IonLabel>
-                                  </IonCol>
-                                  <IonCol size="3">
+                                  {/* </IonCol> */}
+                                  {/* <IonCol size=""> */}
                                     <IonLabel>
                                       An: {ar.arrivalStopTime[i]}
                                     </IonLabel>
-                                  </IonCol>
-                                </IonRow>
+                                  {/* </IonCol> */}
+                                {/* </IonRow> */}
                               </IonItem>
                             );
                           })}
