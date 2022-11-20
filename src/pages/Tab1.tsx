@@ -24,7 +24,7 @@ import moment from "moment";
 import { list } from "ionicons/icons";
 
 const Tab1: React.FC = () => {
-  const [timeOffset, setTimeOffset] = useState(5);
+  // const [timeOffset, setTimeOffset] = useState(5);
 
   const [stops, setStops] = useState([{ name: "", id: "" }]);
   const [arrivals, setArrivals] = useState([
@@ -32,9 +32,11 @@ const Tab1: React.FC = () => {
   ]);
   const [stopId, setStopId] = useState("");
   const [selectedTime, setSelectedTime] = useState(new Date().toString());
-  const numResults = 12;
+  const numResults = 10;
 
-  if (stops.length == 1) {
+  // console.log(stops.length)
+
+  if (stops.length <= 1) {
     document.getElementById("searchResult")?.classList.add("hide");
     document.getElementById("searchResult")?.classList.remove("show");
   } else {
@@ -54,7 +56,7 @@ const Tab1: React.FC = () => {
       );
     });
   };
-  document.getElementById("searchResult")?.classList.add("hide");  // move to useEffect
+  // document.getElementById("searchResult")?.classList.add("hide");  // move to useEffect
 
   useEffect(() => {
     let offset = moment(new Date(selectedTime)).diff(new Date(), "minutes");
@@ -66,11 +68,12 @@ const Tab1: React.FC = () => {
           if (diff === 0) {
             time = "jetzt";
           } else if (diff <= 5) {
-            time = diff.toString() + " minuten";
+            time = diff.toString() + " minute(n)";
           }
           return { line: m.line, direction: m.direction, time: time };
         })
       );
+      // console.log(arrivals)
     });
   }, [stopId, selectedTime]);
 
@@ -83,14 +86,13 @@ const Tab1: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
         <IonGrid>
-
           <IonRow>
             <IonCol size="12">
-              <IonSearchbar
+              <IonSearchbar placeholder="Haltestelle"
                 onIonChange={(ev) => handleChange(ev)}
               ></IonSearchbar>
             </IonCol>
-            <IonCol size="11" id="searchResult">
+            <IonCol size="12" id="searchResult">
               <IonList>
                 {stops.map((stop, index) => {
                   return (
@@ -109,9 +111,8 @@ const Tab1: React.FC = () => {
             </IonCol>
           </IonRow>
 
-          
           <IonRow>
-            <IonCol size="11">
+            <IonCol size="12">
               <IonDatetimeButton
                 datetime="datetime"
                 className="timeButton"
@@ -127,14 +128,14 @@ const Tab1: React.FC = () => {
             </IonCol>
           </IonRow>
           <IonRow>
-            <IonCol size="11">
+            <IonCol size="12">
               <IonList>
                 {arrivals.map((ar, i) => {
                   return (
                     <IonItem key={i}>
                       <IonLabel className="color-dvb">{ar.line}</IonLabel>
-                      <IonLabel>{ar.direction}</IonLabel>
-                      <IonLabel>{ar.time}</IonLabel>
+                      <IonLabel>Richtung: {ar.direction}</IonLabel>
+                      <IonLabel> {ar.time}</IonLabel>
                     </IonItem>
                   );
                 })}

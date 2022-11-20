@@ -1,0 +1,21 @@
+.color-dvb {
+    color: #fdc400 !important;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+
+
+.timeButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    padding-left: 15px;
+}
